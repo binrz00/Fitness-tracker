@@ -10,7 +10,7 @@ module.exports = function(app) {
   });
   
   app.get("/api/workouts", (req, res) => {
-    db.Workout.find().sort({$natural : -1}).limit(1).then(function(results) {
+    db.Workout.find({}).then(function(results) {
       res.json(results);
     })
     .catch(function(error){
@@ -20,8 +20,11 @@ module.exports = function(app) {
   
 
   
-  app.put("/api/workouts/:id", ({ body }, res) => {
- db.Workout.update({ id: event.target.id},{$set:{exercises:body}} , { new: true })
+  app.put("/api/workouts/:id", (req, res) => {
+ db.Workout.updateOne({
+  _id: req.params.id
+}
+,{$set:{exercises:req.body}} , { new: true })
       .then(result => {
         console.log(result)
         res.json(result);
