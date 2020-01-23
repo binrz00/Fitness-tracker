@@ -1,1 +1,3 @@
 # Fitness-tracker
+This app is deployed on heroku at https://i-am-not-fit.herokuapp.com/
+This is the fitness tracker homework. I was provided the front end part of the tracker and by reading the code provided wrote the back-end code. The part that I struggled with the most was trying to figure out what the routes were doing in the front end. The app works as far as functionality goes but it has bugs that I believe are from the front end. In the future I plan to rewrite the front end to be something I would have made.
